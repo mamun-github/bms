@@ -4,13 +4,13 @@ use Entity\User;
 
 class ApplicationDefaultData {
 
-    public function createDefaultData(EntityManager $em) {
-        $this->createUser($em);
+    public function create_default_data(EntityManager $em) {
+        $this->create_user($em);
 
         $em->flush();
     }
 
-    private function createUser (EntityManager $em) {
+    private function create_user (EntityManager $em) {
         $userData = array();
 
         $userData["fullName"] = "Mamun Sardar"; $userData["username"] = "mamun"; $userData["password"] = "1234";

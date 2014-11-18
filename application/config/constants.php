@@ -37,5 +37,14 @@ define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
 
+/**
+ * Used in application bootstrap
+ * this is default php path for windows
+ * configure if php executable located in another folder or application running on another environment (i.e. linux, mac)
+ */
+define('PHP_PATH','C:\\xampp\\php\\php.exe');
+
+
+
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

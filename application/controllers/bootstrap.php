@@ -9,18 +9,18 @@ class bootstrap extends MY_Controller {
     }
 
     public function create_schema() {
-        ApplicationBootstrap::createSchema();
+        ApplicationBootstrap::create_schema();
     }
 
     public function update_schema() {
-        ApplicationBootstrap::updateSchema();
+        ApplicationBootstrap::update_schema();
     }
 
     public function drop_schema() {
-        ApplicationBootstrap::dropSchema();
+        ApplicationBootstrap::drop_schema();
     }
 
     public function create_default_data() {
-        ApplicationBootstrap::createDefaultData($this->em);
+        ApplicationBootstrap::create_default_data($this->em);
     }
 }

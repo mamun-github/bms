@@ -10,10 +10,13 @@ class ApplicationBootstrap {
      * this function should be called when the Database is empty
      * @return bool
      */
-    public static function createSchema() {
+    public static function create_schema() {
+        if(!file_exists(PHP_PATH)) {
+            die("PHP executable path error !!! Please configure constants in application/config.");
+        }
         $successString = "Database schema created successfully!";
         $createSchemaCmd = "orm:schema-tool:create";
-        $command = "php ". APPPATH . "DoctrineCommander.php ". $createSchemaCmd;
+        $command = PHP_PATH . " ". APPPATH . "DoctrineCommander.php ". $createSchemaCmd;
         exec($command, $output);
         if(in_array($successString, $output)) {
             return true;
@@ -29,11 +32,14 @@ class ApplicationBootstrap {
      * 1 - if successfully update
      * 2 - if database is already updated
      */
-    public static function updateSchema() {
+    public static function update_schema() {
+        if(!file_exists(PHP_PATH)) {
+            die("PHP executable path error !!! Please configure constants in application/config.");
+        }
         $successString = "updated successfully";
         $upToDateString = "Nothing to update";
         $forceUpdateSchemaCmd = "orm:schema-tool:update --force";
-        $command = "php " . APPPATH . "DoctrineCommander.php " . $forceUpdateSchemaCmd;
+        $command = PHP_PATH . " ". APPPATH . "DoctrineCommander.php " . $forceUpdateSchemaCmd;
         exec($command, $output);
         foreach ($output as $element) {
             if (strpos($element, $successString)) {
@@ -49,10 +55,13 @@ class ApplicationBootstrap {
      * this function drops all tables from database
      * @return bool
      */
-    public static function dropSchema() {
+    public static function drop_schema() {
+        if(!file_exists(PHP_PATH)) {
+            die("PHP executable path error !!! Please configure constants in application/config.");
+        }
         $successString = "Database schema dropped successfully!";
         $dropSchemaCmd = "orm:schema-tool:drop --force";
-        $command = "php ". APPPATH . "DoctrineCommander.php ". $dropSchemaCmd;
+        $command = PHP_PATH . " ". APPPATH . "DoctrineCommander.php ". $dropSchemaCmd;
         exec($command, $output);
         if(in_array($successString, $output)) {
             return true;
@@ -65,15 +74,15 @@ class ApplicationBootstrap {
      * create default data to run application
      * @param EntityManager $em
      */
-    public static function createDefaultData(EntityManager $em) {
+    public static function create_default_data(EntityManager $em) {
         $defaultData = new ApplicationDefaultData();
-        $defaultData->createDefaultData($em);
+        $defaultData->create_default_data($em);
     }
 
 
 
     private static function execWithTimeout($cmd, $timeout=5) {
-        $descriptorspec = array(
+        $descriptor_spec = array(
             0 => array("pipe", "r"),
             1 => array("pipe", "w"),
             2 => array("pipe", "w")
@@ -81,7 +90,7 @@ class ApplicationBootstrap {
         $pipes = array();
 
         $timeout += time();
-        $process = proc_open($cmd, $descriptorspec, $pipes);
+        $process = proc_open($cmd, $descriptor_spec, $pipes);
         if (!is_resource($process)) {
             throw new Exception("proc_open failed on: " . $cmd);
         }
