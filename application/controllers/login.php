@@ -1,9 +1,9 @@
 <?php
 
 
-class login extends MY_Controller {
+class Login extends MY_Controller {
 
     public function index() {
-        echo "Wellcome to default controller.<br/>This application is under construction";
+        $this->load->view('login');
     }
 }
