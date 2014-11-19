@@ -13,9 +13,7 @@
     <body class="skin-blue">
         <!-- header logo: style can be found in header.less -->
         <header class="header">
-            <a href="index.html" class="logo">
-                BMS
-            </a>
+            <a href="index.html" class="logo">Business Management</a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">
                 <!-- Sidebar toggle button-->
@@ -25,6 +23,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </a>
+                <div id="dot-loader-div">
+                    <div class="dot-loader dot-loader-1"></div>
+                    <div class="dot-loader dot-loader-2"></div>
+                    <div class="dot-loader dot-loader-3"></div>
+                    <div class="dot-loader dot-loader-4"></div>
+                    <div class="dot-loader dot-loader-5"></div>
+                    <div class="dot-loader dot-loader-6"></div>
+                    <div class="dot-loader dot-loader-7"></div>
+                </div>
                 <div class="navbar-right">
                     <ul class="nav navbar-nav">
 
@@ -38,9 +45,7 @@
                             <!-- User image -->
                             <li class="user-header bg-light-blue">
                                 <img src="<?=assets_url()?>img/avatar.png" class="img-circle" alt="User Image" />
-                                <p>
-                                    Jane Doe - Web Developer
-                                </p>
+                                <p>Jane Doe - Web Developer</p>
                             </li>
                             <!-- Menu Footer-->
                             <li class="user-footer">
@@ -94,32 +99,25 @@
     <!-- Right side column. Contains the navbar and content of the page -->
     <aside class="right-side">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <h1>
-            Dashboard
-            <small>Control panel</small>
-        </h1>
-        <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Dashboard</li>
-        </ol>
-    </section>
+        <section class="content-header">
+            <h1>
+                Dashboard
+                <small>Control panel</small>
+            </h1>
+        </section>
 
-    <!-- Main content -->
-    <section class="content">
+        <!-- Main content -->
+        <section class="content">
+            This is main content box
+        </section>
+        <!-- /.content -->
 
-
-        this is main content box
-
-
-    </section><!-- /.content -->
     </aside><!-- /.right-side -->
     </div><!-- ./wrapper -->
 
     <?php
     $this->load->view('include/footer-include');
     ?>
-
 
     </body>
 </html>

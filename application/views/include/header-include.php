@@ -13,7 +13,10 @@
 <!-- bootstrap wysihtml5 - text editor -->
 <link href="<?=assets_url()?>css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
 <!-- Theme style -->
-<link href="<?=assets_url()?>css/app.css" rel="stylesheet" type="text/css" />
+<link href="<?=assets_url()?>css/theme.css" rel="stylesheet" type="text/css" />
+
+<!--Application-->
+<link href="<?=assets_url()?>css/application.css" rel="stylesheet" type="text/css" />
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

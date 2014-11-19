@@ -20,8 +20,11 @@
 <!-- iCheck -->
 <script src="<?=assets_url()?>js/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
 
-<!-- AdminLTE App -->
-<script src="<?=assets_url()?>js/app.js" type="text/javascript"></script>
+<!-- Theme -->
+<script src="<?=assets_url()?>js/theme.js" type="text/javascript"></script>
+
+<!--Application-->
+<script src="<?=assets_url()?>js/application.js" type="text/javascript"></script>
 
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <!--<script src="--><?//=assets_url()?><!--js/dashboard.js" type="text/javascript"></script>-->

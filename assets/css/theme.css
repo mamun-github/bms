@@ -2614,11 +2614,17 @@ Component: timeline
 .skin-blue .sidebar > .sidebar-menu > li > a {
   margin-right: 1px;
 }
-.skin-blue .sidebar > .sidebar-menu > li > a:hover,
+
 .skin-blue .sidebar > .sidebar-menu > li.active > a {
-  color: #222;
-  background: #f9f9f9;
+    color: #ffffff;
+    background: #367fa9;
 }
+
+.skin-blue .sidebar > .sidebar-menu > li > a:hover {
+    color: #ffffff;
+    background: #3c8dbc;
+}
+
 .skin-blue .sidebar > .sidebar-menu > li > .treeview-menu {
   margin: 0 1px;
   background: #f9f9f9;
