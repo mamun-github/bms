@@ -25,9 +25,3 @@
 
 <!--Application-->
 <script src="<?=assets_url()?>js/application.js" type="text/javascript"></script>
-
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<!--<script src="--><?//=assets_url()?><!--js/dashboard.js" type="text/javascript"></script>-->
-
-<!-- AdminLTE for demo purposes -->
-<!--<script src="--><?//=assets_url()?><!--js/demo.js" type="text/javascript"></script>-->

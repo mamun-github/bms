@@ -107,7 +107,7 @@
         </section>
 
         <!-- Main content -->
-        <section class="content">
+        <section class="content" id="content-holder">
             This is main content box
         </section>
         <!-- /.content -->
