@@ -6,7 +6,7 @@
     </li>
     <li>
         <a href="#" class="ajax-link">
-            <i class="fa fa-th"></i> <span>Widgets</span> <small class="badge pull-right bg-green">new</small>
+            <i class="fa fa-th"></i> <span>Widgets</span>
         </a>
     </li>
     <li class="treeview">
@@ -59,13 +59,13 @@
     <li>
         <a href="#">
             <i class="fa fa-calendar"></i> <span>Calendar</span>
-            <small class="badge pull-right bg-red">3</small>
+            <i class="fa fa-angle-right pull-right"></i>
         </a>
     </li>
     <li>
         <a href="#">
             <i class="fa fa-envelope"></i> <span>Mailbox</span>
-            <small class="badge pull-right bg-yellow">12</small>
+            <i class="fa fa-angle-right pull-right"></i>
         </a>
     </li>
     <li class="treeview">
