@@ -1,5 +1,6 @@
 <?php
 
+use Netcarver\Textile;
 
 class Login extends MY_Controller {
 

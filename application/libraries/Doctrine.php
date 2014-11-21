@@ -14,7 +14,10 @@ class Doctrine
         Setup::registerAutoloadDirectory(__DIR__);
 
         // Load the database configuration from CodeIgniter
-        require APPPATH . 'config/database.php';
+        if(ENVIRONMENT == 'production')
+            require APPPATH . 'config/production/database.php';
+        else
+            require APPPATH . 'config/development/database.php';
 
         $connection_options = array(
             'driver'        => 'pdo_mysql',

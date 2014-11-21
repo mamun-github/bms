@@ -2,7 +2,7 @@
 
 require_once APPPATH . "/bootstrap/ApplicationBootstrap.php";
 
-class bootstrap extends MY_Controller {
+class Bootstrap extends MY_Controller {
 
     public function index() {
         echo "Application Bootstrap Service";

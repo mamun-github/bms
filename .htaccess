@@ -1,9 +1,0 @@
-<IfModule mod_rewrite.c>
-	RewriteEngine On
-
-	RewriteBase /bms
-
-	RewriteCond $1 !^(index.php|assets|robots.txt)
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^(.*)$ index.php/$1 [L,QSA]
-</IfModule>
