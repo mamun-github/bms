@@ -11,7 +11,7 @@ class Authenticator {
         $hasAccess = $ci->auth->checkAccess($controller, $action);
 
         if(!$hasAccess) {
-            header("HTTP/1.0 403 Forbidden");
+            header("HTTP/1.1 401 Unauthorized");
             exit;
         }
     }
