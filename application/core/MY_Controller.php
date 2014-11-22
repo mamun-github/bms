@@ -9,16 +9,9 @@ class MY_Controller extends CI_Controller{
         parent::__construct();
         $this->load->library('session');
         $this->load->library('doctrine');
-        $this->load->library('authentication');
-
-        //authenticate request
-        $this->authentication->authenticate($this);
+        $this->load->library('auth');
 
         //assign entity manager
         $this->em = $this->doctrine->em;
-    }
-
-    public function logout() {
-
     }
 }

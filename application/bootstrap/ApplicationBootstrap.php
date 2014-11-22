@@ -1,5 +1,4 @@
 <?php
-use Doctrine\ORM\EntityManager;
 require_once "ApplicationDefaultData.php";
 
 class ApplicationBootstrap {
@@ -72,46 +71,11 @@ class ApplicationBootstrap {
 
     /**
      * create default data to run application
-     * @param EntityManager $em
      */
-    public static function create_default_data(EntityManager $em) {
+    public static function create_default_data() {
         $defaultData = new ApplicationDefaultData();
-        $defaultData->create_default_data($em);
+        $ci =& get_instance();
+        $defaultData->create_default_data($ci->em);
     }
 
-
-
-    private static function execWithTimeout($cmd, $timeout=5) {
-        $descriptor_spec = array(
-            0 => array("pipe", "r"),
-            1 => array("pipe", "w"),
-            2 => array("pipe", "w")
-        );
-        $pipes = array();
-
-        $timeout += time();
-        $process = proc_open($cmd, $descriptor_spec, $pipes);
-        if (!is_resource($process)) {
-            throw new Exception("proc_open failed on: " . $cmd);
-        }
-
-        $output = '';
-
-        do {
-            $timeleft = $timeout - time();
-            $read = array($pipes[1]);
-            stream_select($read, $write = NULL, $exeptions = NULL, $timeleft, NULL);
-
-            if (!empty($read)) {
-                $output .= fread($pipes[1], 8192);
-            }
-        } while (!feof($pipes[1]) && $timeleft > 0);
-
-        if ($timeleft <= 0) {
-            proc_terminate($process);
-            throw new Exception("command timeout on: " . $cmd);
-        } else {
-            return $output;
-        }
-    }
 }

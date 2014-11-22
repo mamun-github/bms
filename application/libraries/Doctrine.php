@@ -1,4 +1,4 @@
-<?php
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 use Doctrine\Common\ClassLoader,
     Doctrine\ORM\Tools\Setup,
