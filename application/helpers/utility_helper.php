@@ -38,3 +38,10 @@ if (!function_exists('dump_exit')) {
         exit;
     }
 }
+
+if (!function_exists('parse_boolean')) {
+    function parse_boolean($obj)
+    {
+        return filter_var($obj, FILTER_VALIDATE_BOOLEAN);
+    }
+}

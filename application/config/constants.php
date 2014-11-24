@@ -45,6 +45,11 @@ define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 define('PHP_PATH','C:\\xampp\\php\\php.exe');
 
 
+/**
+ * File Cache expiration time: 2 years
+ */
+define('FILE_CACHE_EXP_TIME', 2*365*24*60*60);
+
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

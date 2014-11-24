@@ -15,7 +15,7 @@ class ApplicationBootstrap {
         }
         $successString = "Database schema created successfully!";
         $createSchemaCmd = "orm:schema-tool:create";
-        $command = PHP_PATH . " ". APPPATH . "DoctrineCommander.php ". $createSchemaCmd;
+        $command = PHP_PATH . " ". APPPATH . "Doctrine_tool.php ". $createSchemaCmd;
         exec($command, $output);
         if(in_array($successString, $output)) {
             return true;
@@ -38,7 +38,7 @@ class ApplicationBootstrap {
         $successString = "updated successfully";
         $upToDateString = "Nothing to update";
         $forceUpdateSchemaCmd = "orm:schema-tool:update --force";
-        $command = PHP_PATH . " ". APPPATH . "DoctrineCommander.php " . $forceUpdateSchemaCmd;
+        $command = PHP_PATH . " ". APPPATH . "Doctrine_tool.php " . $forceUpdateSchemaCmd;
         exec($command, $output);
         foreach ($output as $element) {
             if (strpos($element, $successString)) {
@@ -60,7 +60,7 @@ class ApplicationBootstrap {
         }
         $successString = "Database schema dropped successfully!";
         $dropSchemaCmd = "orm:schema-tool:drop --force";
-        $command = PHP_PATH . " ". APPPATH . "DoctrineCommander.php ". $dropSchemaCmd;
+        $command = PHP_PATH . " ". APPPATH . "Doctrine_tool.php ". $dropSchemaCmd;
         exec($command, $output);
         if(in_array($successString, $output)) {
             return true;

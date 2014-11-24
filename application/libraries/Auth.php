@@ -2,7 +2,7 @@
 
 require_once 'Auth/ActionData.php';
 require_once 'Auth/SessionData.php';
-require_once 'Auth/UserActionData.php';
+require_once 'Auth/UserActionRoleData.php';
 
 class Auth {
 
@@ -13,10 +13,11 @@ class Auth {
     function __construct() {
         $this->sessionObj = new SessionData();
         $this->actionObj = new ActionData();
-        $this->userActionObj = new UserActionData();
+        $this->userActionObj = new UserActionRoleData();
     }
 
-    public function tryLogin() {
+    //return true/false
+    public function tryLogin($username, $password) {
 
     }
 
@@ -32,6 +33,10 @@ class Auth {
 
     }
 
+    public function getLoggedInUser() {
+
+    }
+
 
     public function checkAccess($controller, $action) {
         $hasAccess = false;
@@ -41,18 +46,21 @@ class Auth {
             return $hasAccess; //action not found, so no access
         }
 
-        if($action['isAnonymous'] === TRUE) {
+        $allowGet = parse_boolean($action['allowGet']);
+        $allowPost = parse_boolean($action['allowPost']);
+        $isAnonymous = parse_boolean($action['isAnonymous']);
+
+        if(!$allowPost && $_SERVER['REQUEST_METHOD'] === 'POST') {
+            return $hasAccess;  //no access
+        }
+        elseif(!$allowGet && $_SERVER['REQUEST_METHOD'] === 'GET') {
+            return $hasAccess;  //no access
+        }
+
+        if($isAnonymous) {
             $hasAccess = TRUE;
             return $hasAccess;  //action is anonymous, so access granted
         } else {
-            $allowGet = $action['allowGet'];
-            $allowPost = $action['allowPost'];
-            if(!$allowPost && $_SERVER['REQUEST_METHOD'] === 'POST') {
-                return $hasAccess;  //no access
-            }
-            elseif(!$allowGet && $_SERVER['REQUEST_METHOD'] === 'GET') {
-                return $hasAccess;  //no access
-            }
             //now check if user is logged in
             $isLoggedIn = $this->sessionObj->isLoggedIn();
             if(!$isLoggedIn) {
