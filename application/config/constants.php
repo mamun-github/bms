@@ -51,5 +51,11 @@ define('PHP_PATH','C:\\xampp\\php\\php.exe');
 define('FILE_CACHE_EXP_TIME', 2*365*24*60*60);
 
 
-/* End of file constants.php */
-/* Location: ./application/config/constants.php */
+/**
+ * All constants used in controller and action_model
+ */
+
+define('ERROR', 'error');
+define('MESSAGE', 'message');
+
+define('STR_SLASH_FORWARD', "/");

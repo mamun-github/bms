@@ -5,13 +5,12 @@ use Netcarver\Textile;
 class Login extends MY_Controller {
 
     public function index() {
-        $this->load->view('login');
+        $this->load_view('login');
     }
 
     public function check_login() {
-        $this->load->model('action_model/login/login_check_login');
-        $result = $this->login_check_login->execute();
-        $error = $result['error'];
+        $result = $this->execute_result('login_check_login', 'action_model/login');
+        $error = $result[ERROR];
         if($error) {
             //show login page again with some data
         } else {

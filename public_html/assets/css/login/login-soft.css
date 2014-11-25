@@ -13,8 +13,10 @@ Login page
   margin-top:60px;
   padding: 15px;
   text-align: center;
-}  
-
+}
+.close{
+    margin-top: 8px;
+}
 
 .login .content {
   background: url(../../img/bg-white-lock.png) repeat;
@@ -27,10 +29,10 @@ Login page
 }
 
 .login .content h3 {
-  color: #eee;
+  color: #fff;
 }
 .login .content h4  {
-  color: #eee;
+  color: #fff;
 }
 
 .login .content p,
