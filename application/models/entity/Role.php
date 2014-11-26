@@ -10,6 +10,10 @@ use Doctrine\Common\Collections\ArrayCollection;
  */
 class Role {
 
+    public static $ROLE_DEVELOPMENT = 1;
+    public static $ROLE_ADMIN = 2;
+
+
     /**
      * @Id
      * @Column(type="integer", nullable=false)

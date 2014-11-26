@@ -56,14 +56,14 @@ class Auth {
     public function check_access($controller, $action) {
         $hasAccess = false;
 
-        $action = $this->actionObj->getActionByControllerAndAction($controller, $action);
+        $action = $this->actionObj->get_action_by_controller_and_action($controller, $action);
         if($action == null) {
             return $hasAccess; //action not found, so no access
         }
 
-        $allowGet = parse_boolean($action['allowGet']);
-        $allowPost = parse_boolean($action['allowPost']);
-        $isAnonymous = parse_boolean($action['isAnonymous']);
+        $allowGet = parse_boolean($action['allow_get']);
+        $allowPost = parse_boolean($action['allow_post']);
+        $isAnonymous = parse_boolean($action['is_anonymous']);
 
         if(!$allowPost && $_SERVER['REQUEST_METHOD'] === 'POST') {
             return $hasAccess;  //no access
@@ -77,7 +77,7 @@ class Auth {
             return $hasAccess;  //action is anonymous, so access granted
         } else {
             //now check if user is logged in
-            $isLoggedIn = $this->sessionObj->isLoggedIn();
+            $isLoggedIn = $this->sessionObj->is_logged_in();
             if(!$isLoggedIn) {
                 return $hasAccess;  //no access for not logged in user
             }

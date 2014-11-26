@@ -14,23 +14,23 @@ class UserRole {
      * @Id
      * @Column(type="integer", nullable=false)
      */
-    private $userId;
+    private $user_id;
 
     /**
      * @Id
      * @Column(type="integer", nullable=false)
      */
-    private $roleId;
+    private $role_id;
 
     /**
      * @Column(type="boolean", nullable=false)
      */
-    private $isReserved;
+    private $is_reserved;
 
     public function __construct($args) {
-        $this->userId = $args['userId'];
-        $this->roleId = $args['roleId'];
-        $this->isReserved = $args['isReserved'];
+        $this->user_id = $args['user_id'];
+        $this->role_id = $args['role_id'];
+        $this->is_reserved = $args['is_reserved'];
     }
 
 }

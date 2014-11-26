@@ -31,12 +31,12 @@ class Doctrine
             ),
         );
 
-        // With this configuration, your model files need to be in application/models/Entity
-        // e.g. Creating a new Entity\User loads the class from application/models/Entity/User.php
+        // With this configuration, your model files need to be in application/models/entity
+        // e.g. Creating a new Entity\User loads the class from application/models/entity/User.php
         $models_namespace = 'entity';
         $models_path = APPPATH . 'models';
         $proxies_dir = APPPATH . 'models/Proxies';
-        $metadata_paths = array(APPPATH . 'models');
+        $metadata_paths = array(APPPATH . 'models/entity');
 
         // Set $dev_mode to TRUE to disable caching while you develop
         $config = Setup::createAnnotationMetadataConfiguration($metadata_paths, $dev_mode = true, $proxies_dir);

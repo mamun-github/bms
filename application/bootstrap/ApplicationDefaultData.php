@@ -1,4 +1,5 @@
-<?php
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
 use Doctrine\ORM\EntityManager;
 use entity\AppUser,
     entity\Role,
@@ -21,38 +22,47 @@ class ApplicationDefaultData {
     }
 
     private function create_user () {
-        $userData["fullName"] = "Administrator"; $userData["username"] = "admin"; $userData["password"] = "1234";
-        $user = new AppUser(array('full_name'=>'Administrator', 'username'=>'admin','password'=>'1234','email'=>'a@b.c'));
-        $this->em->persist($user);
-
+        //id = 1
         $user = new AppUser(array('full_name'=>'Mamun Sardar', 'username'=>'mamun','password'=>'1234','email'=>'a@b.c'));
         $this->em->persist($user);
-
+        //id = 2
+        $user = new AppUser(array('full_name'=>'Administrator', 'username'=>'admin','password'=>'1234','email'=>'a@b.c'));
+        $this->em->persist($user);
     }
 
     private function create_role() {
-        $roleAdmin = new Role(array('name'=>'Admin', 'isReserved'=> TRUE));
+        $roleAdmin = new Role(array('name'=>'DEVELOPMENT', 'is_reserved'=> TRUE));
         $this->em->persist($roleAdmin);
 
-        $roleUser = new Role(array('name'=>'User', 'isReserved'=> TRUE));
+        $roleUser = new Role(array('name'=>'ADMIN', 'is_reserved'=> TRUE));
         $this->em->persist($roleUser);
     }
 
     private function create_user_role() {
-        $userRole = new UserRole(array('userId'=> 1, 'roleId'=> 1));
+        $userRole = new UserRole(array('user_id'=> 1, 'role_id'=> ROLE::$ROLE_DEVELOPMENT, 'is_reserved'=>TRUE));
         $this->em->persist($userRole);
-        $userRole = new UserRole(array('userId'=> 1, 'roleId'=> 2));
+        $userRole = new UserRole(array('user_id'=> 1, 'role_id'=> ROLE::$ROLE_ADMIN, 'is_reserved'=>TRUE));
         $this->em->persist($userRole);
-        $userRole = new UserRole(array('userId'=> 2, 'roleId'=> 2));
+        $userRole = new UserRole(array('user_id'=> 2, 'role_id'=> ROLE::$ROLE_ADMIN, 'is_reserved'=>TRUE));
         $this->em->persist($userRole);
     }
 
     private function create_action() {
-        $action = new Action(array('controllerName'=>'login', 'actionName'=>'index', 'description'=>'Show login page', 'allowGet'=>TRUE, 'allowPost'=>TRUE, 'isAnonymous'=>TRUE));
+        //id = 1
+        $action = new Action(array('controller_name'=>'login', 'action_name'=>'index', 'description'=>'Show login page', 'allow_get'=>TRUE, 'allow_post'=>FALSE, 'is_anonymous'=>TRUE));
+        $this->em->persist($action);
+        //id = 2
+        $action = new Action(array('controller_name'=>'login', 'action_name'=>'check_login', 'description'=>'Check user login', 'allow_get'=>FALSE, 'allow_post'=>TRUE, 'is_anonymous'=>TRUE));
+        $this->em->persist($action);
+        //id = 3
+        $action = new Action(array('controller_name'=>'home', 'action_name'=>'index', 'description'=>'Show home page', 'allow_get'=>TRUE, 'allow_post'=>FALSE, 'is_anonymous'=>FALSE));
         $this->em->persist($action);
     }
 
     private function createRoleAction() {
-        //$roleAction = new RoleAction(array('roleId'=>1, 'actionId'=>1, 'isReserved'=>TRUE));
+        $roleAction = new RoleAction(array('action_id'=>3, 'role_id'=>Role::$ROLE_ADMIN, 'is_reserved'=>TRUE));
+        $this->em->persist($roleAction);
+        $roleAction = new RoleAction(array('action_id'=>3, 'role_id'=>Role::$ROLE_DEVELOPMENT, 'is_reserved'=>TRUE));
+        $this->em->persist($roleAction);
     }
 }

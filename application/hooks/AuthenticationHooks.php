@@ -1,7 +1,10 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Authenticator {
+class AuthenticationHooks {
 
+    /**
+     * authenticate all request to application
+     */
     public function authenticate() {
         $ci =& get_instance();
 

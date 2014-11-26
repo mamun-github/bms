@@ -6,7 +6,7 @@ class SessionData {
         $this->ci =& get_instance();  //to access the session
     }
 
-    public function isLoggedIn() {
+    public function is_logged_in() {
         $appUserId = $this->ci->session->userdata('app_user_id');
         if(!$appUserId) {
             return FALSE;

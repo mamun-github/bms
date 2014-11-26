@@ -7,14 +7,14 @@ class ActionData {
 
     function __construct() {
         $this->ci =& get_instance();
-        $this->actionList = $this->loadActionData();
+        $this->actionList = $this->load_action_data();
     }
 
-    public function getActionByControllerAndAction($controller, $action) {
+    public function get_action_by_controller_and_action($controller, $action) {
         if(empty($this->actionList)) return null;
         $actionObj = null;
         foreach($this->actionList as $singleAction) {
-            if(($singleAction['controllerName'] == $controller) && ($singleAction['actionName'] == $action)) {
+            if(($singleAction['controller_name'] == $controller) && ($singleAction['action_name'] == $action)) {
                 $actionObj = $singleAction;
                 break;
             }
@@ -22,8 +22,8 @@ class ActionData {
         return $actionObj;
     }
 
-    private function loadActionData() {
-        if ( ! $cache_data = $this->ci->cache->file->get('actionList'))
+    private function load_action_data() {
+        if ( ! $cache_data = $this->ci->cache->file->get('action_list'))
         {
             $listOfActions = array();
 

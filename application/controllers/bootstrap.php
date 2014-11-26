@@ -9,7 +9,7 @@ class Bootstrap extends MY_Controller {
     }
 
     public function create_schema() {
-        ApplicationBootstrap::create_schema();
+        //ApplicationBootstrap::create_schema();
     }
 
     public function update_schema() {
@@ -21,6 +21,6 @@ class Bootstrap extends MY_Controller {
     }
 
     public function create_default_data() {
-        ApplicationBootstrap::create_default_data();
+        //ApplicationBootstrap::create_default_data();
     }
 }

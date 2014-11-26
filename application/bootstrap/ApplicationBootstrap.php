@@ -1,15 +1,16 @@
-<?php
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
 require_once "ApplicationDefaultData.php";
 
 class ApplicationBootstrap {
 
     /**
-     * this function creates schema using DoctrineCommander.php
+     * this function creates schema
      * will fail if schema already exists
      * this function should be called when the Database is empty
      * @return bool
      */
-    public static function create_schema() {
+    public static function create_schema($ci) {
         if(!file_exists(PHP_PATH)) {
             die("PHP executable path error !!! Please configure constants in application/config.");
         }
@@ -75,7 +76,8 @@ class ApplicationBootstrap {
     public static function create_default_data() {
         $defaultData = new ApplicationDefaultData();
         $ci =& get_instance();
-        $defaultData->create_default_data($ci->em);
+        $ci->load->library('doctrine');
+        $defaultData->create_default_data($ci->doctrine->em);
     }
 
 }
