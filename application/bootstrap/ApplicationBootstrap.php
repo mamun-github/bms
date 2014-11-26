@@ -10,7 +10,7 @@ class ApplicationBootstrap {
      * this function should be called when the Database is empty
      * @return bool
      */
-    public static function create_schema($ci) {
+    public static function create_schema() {
         if(!file_exists(PHP_PATH)) {
             die("PHP executable path error !!! Please configure constants in application/config.");
         }

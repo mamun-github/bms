@@ -4,23 +4,23 @@
 //schema create hook
 
 /*$hook['pre_controller'][] = array(
-    'class'    => 'BootstrapHooks',
+    'class'    => 'BootstrapSchemaHooks',
     'function' => 'create_schema',
-    'filename' => 'BootstrapHooks.php',
+    'filename' => 'BootstrapSchemaHooks.php',
     'filepath' => 'hooks'
 );*/
 
 //default data create hook
 
-/*$hook['post_controller'][] = array(
-    'class'    => 'BootstrapHooks',
+/*$hook['post_controller'][0] = array(
+    'class'    => 'BootstrapDefaultDataHooks',
     'function' => 'create_default_data',
-    'filename' => 'BootstrapHooks.php',
+    'filename' => 'BootstrapDefaultDataHooks.php',
     'filepath' => 'hooks'
 );*/
 
 
-$hook['post_controller'][] = array(
+$hook['post_controller'][1] = array(
     'class'    => 'AuthenticationHooks',
     'function' => 'authenticate',
     'filename' => 'AuthenticationHooks.php',

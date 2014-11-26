@@ -6,17 +6,10 @@ require_once 'Auth/UserActionRoleData.php';
 
 class Auth {
 
-    private $ci;
     private $sessionObj;
     private $actionObj;
     private $userActionObj;
 
-    function __construct() {
-        $this->ci =& get_instance();
-        $this->sessionObj = new SessionData();
-        $this->actionObj = new ActionData();
-        $this->userActionObj = new UserActionRoleData();
-    }
 
     /**
      * check login info valid or not, add user to session
@@ -25,9 +18,10 @@ class Auth {
      * @return bool
      */
     public function try_login($username, $password) {
+        $ci =& get_instance();
         $password = hash_password($password);
         $query = "SELECT * FROM app_user WHERE username = ? AND password = ? LIMIT 1";
-        $queryResult = $this->ci->db->query($query, array($username, $password));
+        $queryResult = $ci->db->query($query, array($username, $password));
         $result = $queryResult->result_array();
         if(sizeof($result) > 0) {
             $this->sessionObj->add_app_user($result[0]);
@@ -54,6 +48,10 @@ class Auth {
 
 
     public function check_access($controller, $action) {
+        $this->sessionObj = new SessionData();
+        $this->actionObj = new ActionData();
+        $this->userActionObj = new UserActionRoleData();
+
         $hasAccess = false;
 
         $action = $this->actionObj->get_action_by_controller_and_action($controller, $action);
