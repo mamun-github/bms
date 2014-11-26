@@ -6,39 +6,54 @@ require_once 'Auth/UserActionRoleData.php';
 
 class Auth {
 
+    private $ci;
     private $sessionObj;
     private $actionObj;
     private $userActionObj;
 
     function __construct() {
+        $this->ci =& get_instance();
         $this->sessionObj = new SessionData();
         $this->actionObj = new ActionData();
         $this->userActionObj = new UserActionRoleData();
     }
 
-    //return true/false
-    public function tryLogin($username, $password) {
-
+    /**
+     * check login info valid or not, add user to session
+     * @param $username
+     * @param $password
+     * @return bool
+     */
+    public function try_login($username, $password) {
+        $password = hash_password($password);
+        $query = "SELECT * FROM app_user WHERE username = ? AND password = ? LIMIT 1";
+        $queryResult = $this->ci->db->query($query, array($username, $password));
+        $result = $queryResult->result_array();
+        if(sizeof($result) > 0) {
+            $this->sessionObj->add_app_user($result[0]);
+            return TRUE;
+        }
+        return FALSE;
     }
 
     public function logout() {
 
     }
 
-    public function isLoggedIn() {
+    public function is_logged_in() {
 
     }
 
-    public function getLoggedInUserId() {
+    public function get_user_id() {
 
     }
 
-    public function getLoggedInUser() {
+    public function get_user() {
 
     }
 
 
-    public function checkAccess($controller, $action) {
+    public function check_access($controller, $action) {
         $hasAccess = false;
 
         $action = $this->actionObj->getActionByControllerAndAction($controller, $action);
@@ -67,7 +82,7 @@ class Auth {
                 return $hasAccess;  //no access for not logged in user
             }
             //now check if user has really access to this action
-            $appUserId = $this->sessionObj->getLoggedInUserId();
+            $appUserId = $this->sessionObj->get_user_id();
             $actionId = $action['id'];
             $hasAccessToAction = $this->userActionObj->checkUserAccessToAction($appUserId, $actionId);
             $hasAccess = $hasAccessToAction;

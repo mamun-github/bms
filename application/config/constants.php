@@ -50,12 +50,20 @@ define('PHP_PATH','C:\\xampp\\php\\php.exe');
  */
 define('FILE_CACHE_EXP_TIME', 2*365*24*60*60);
 
+/**
+ * to email for sending email when exception occurred
+ */
+define('TO_EMAIL_FOR_ERROR', 'mamun.srdr@gmail.com');
+
 
 /**
  * All constants used in controller and action_model
  */
 
+define('ID', 'id');
+define('NAME', 'name');
 define('ERROR', 'error');
 define('MESSAGE', 'message');
 
 define('STR_SLASH_FORWARD', "/");
+define('STR_HTML_BR', '<br>');

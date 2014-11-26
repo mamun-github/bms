@@ -14,22 +14,22 @@ class RoleAction {
      * @Id
      * @Column(type="integer", nullable=false)
      */
-    private $roleId;
+    private $role_id;
 
     /**
      * @Id
      * @Column(type="integer", nullable=false)
      */
-    private $actionId;
+    private $action_id;
 
     /**
      * @Column(type="boolean", nullable=false)
      */
-    private $isReserved;
+    private $is_reserved;
 
     public function __construct($args) {
-        $this->roleId = $args['roleId'];
-        $this->actionId = $args['actionId'];
-        $this->isReserved = $args['isReserved'];
+        $this->role_id = $args['role_id'];
+        $this->action_id = $args['action_id'];
+        $this->is_reserved = $args['is_reserved'];
     }
 }

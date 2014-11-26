@@ -20,12 +20,12 @@ class Action {
     /**
      * @Column(type="string", length=50, nullable=false)
      */
-    private $controllerName;
+    private $controller_name;
 
     /**
      * @Column(type="string", length=50, nullable=false)
      */
-    private $actionName;
+    private $action_name;
 
     /**
      * @Column(type="string", length=50, nullable=false)
@@ -35,24 +35,24 @@ class Action {
     /**
      * @Column(type="boolean", nullable=false)
      */
-    private $allowGet;
+    private $allow_get;
 
     /**
      * @Column(type="boolean", nullable=false)
      */
-    private $allowPost;
+    private $allow_post;
 
     /**
      * @Column(type="boolean", nullable=false)
      */
-    private $isAnonymous;
+    private $is_anonymous;
 
     public function __construct($args) {
-        $this->controllerName = $args['controllerName'];
-        $this->actionName = $args['actionName'];
+        $this->controller_name = $args['controller_name'];
+        $this->action_name = $args['action_name'];
         $this->description = $args['description'];
-        $this->allowGet = $args['allowGet'];
-        $this->allowPost = $args['allowPost'];
-        $this->isAnonymous = $args['isAnonymous'];
+        $this->allow_get = $args['allow_get'];
+        $this->allow_post = $args['allow_post'];
+        $this->is_anonymous = $args['is_anonymous'];
     }
 }

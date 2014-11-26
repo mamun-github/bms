@@ -8,7 +8,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @Entity
  * @Table(name="app_user")
  */
-class User {
+class AppUser {
 
     /**
      * @Id
@@ -20,7 +20,7 @@ class User {
     /**
      * @Column(type="string", length=100, nullable=false)
      */
-    private $fullName;
+    private $full_name;
 
     /**
      * @Column(type="string", length=32, unique=true, nullable=false)
@@ -32,16 +32,17 @@ class User {
      */
     private $password;
 
+    /**
+     * @Column(type="string", length=100, nullable=false)
+     */
+    private $email;
+
 
     public function __construct($args) {
-        $this->fullName = $args["fullName"];
+        $this->full_name = $args["full_name"];
         $this->username = $args["username"];
-        $this->password = $this->hashPassword($args["password"]);
-    }
-
-    public function hashPassword($value) {
-        $salt = '#*$e@U!rE*^';
-        return md5($salt . $value);
+        $this->password = hash_password($args["password"]);
+        $this->email = $args["email"];
     }
 
 }

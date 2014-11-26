@@ -34,8 +34,8 @@ class UserActionRoleData {
         {
             $listOfUserActionRole = array();
             //here goes your codes...
-            $query = $this->ci->db->query(UserActionRoleView::$query);
-            $results = $query->result_array();
+            $queryResults = $this->ci->db->query(UserActionRoleView::$query);
+            $results = $queryResults->result_array();
             foreach($results as $result) {
                 $listOfUserActionRole[$result['user_id']] = $result;
             }

@@ -8,7 +8,7 @@ class Authenticator {
         $controller = $ci->router->class;
         $action = $ci->router->method;
 
-        $hasAccess = $ci->auth->checkAccess($controller, $action);
+        $hasAccess = $ci->auth->check_access($controller, $action);
 
         if(!$hasAccess) {
             header("HTTP/1.1 401 Unauthorized");

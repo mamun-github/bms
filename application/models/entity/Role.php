@@ -25,11 +25,11 @@ class Role {
     /**
      * @Column(type="boolean", nullable=false)
      */
-    private $isReserved;
+    private $is_reserved;
 
     public function __construct($args) {
         $this->name = $args['name'];
-        $this->isReserved = $args['isReserved'];
+        $this->is_reserved = $args['is_reserved'];
     }
 
 }
