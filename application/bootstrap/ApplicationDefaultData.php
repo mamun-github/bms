@@ -57,12 +57,17 @@ class ApplicationDefaultData {
         //id = 3
         $action = new Action(array('controller_name'=>'home', 'action_name'=>'index', 'description'=>'Show home page', 'allow_get'=>TRUE, 'allow_post'=>FALSE, 'is_anonymous'=>FALSE));
         $this->em->persist($action);
+        //id = 4
+        $action = new Action(array('controller_name'=>'home', 'action_name'=>'demo', 'description'=>'Show demo page', 'allow_get'=>FALSE, 'allow_post'=>TRUE, 'is_anonymous'=>FALSE));
+        $this->em->persist($action);
     }
 
     private function createRoleAction() {
         $roleAction = new RoleAction(array('action_id'=>3, 'role_id'=>Role::$ROLE_ADMIN, 'is_reserved'=>TRUE));
         $this->em->persist($roleAction);
         $roleAction = new RoleAction(array('action_id'=>3, 'role_id'=>Role::$ROLE_DEVELOPMENT, 'is_reserved'=>TRUE));
+        $this->em->persist($roleAction);
+        $roleAction = new RoleAction(array('action_id'=>4, 'role_id'=>Role::$ROLE_ADMIN, 'is_reserved'=>TRUE));
         $this->em->persist($roleAction);
     }
 }

@@ -64,12 +64,12 @@ class Auth {
         $allowPost = parse_boolean($action['allow_post']);
         $isAnonymous = parse_boolean($action['is_anonymous']);
 
-        /*if(!$allowPost && $_SERVER['REQUEST_METHOD'] === 'POST') {
+        if(!$allowPost && $_SERVER['REQUEST_METHOD'] === 'POST') {
             return $hasAccess;  //no access
         }
         elseif(!$allowGet && $_SERVER['REQUEST_METHOD'] === 'GET') {
             return $hasAccess;  //no access
-        }*/
+        }
 
         if($isAnonymous) {
             $hasAccess = TRUE;
