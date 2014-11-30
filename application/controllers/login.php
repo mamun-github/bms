@@ -11,8 +11,9 @@ class Login extends MY_Controller {
         $error = $result[ERROR];
         if($error) {
             //show login page again with some data
+            die('login failed');
         } else {
-            //redirect to home
+            redirect('home');
         }
     }
 }

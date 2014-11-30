@@ -14,7 +14,13 @@ class AuthenticationHooks {
         $hasAccess = $ci->auth->check_access($controller, $action);
 
         if(!$hasAccess) {
+            if (isset($_SERVER['HTTP_X_REQUESTED_WITH'])
+                AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest') {
+                header("HTTP/1.1 401 Unauthorized");
+                exit;
+            }
             header("HTTP/1.1 401 Unauthorized");
+            header("location: ". base_url());
             exit;
         }
     }

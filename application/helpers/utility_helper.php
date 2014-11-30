@@ -1,6 +1,17 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
+ * assets url in public
+ */
+if (!function_exists('assets_url()')) {
+    function assets_url()
+    {
+        return base_url() . 'assets/';
+    }
+}
+
+
+/**
  * Dump helper. Functions to dump variables to the screen, in a nicley formatted manner.
  * @author Joost van Veen
  * @version 1.0

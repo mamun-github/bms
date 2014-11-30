@@ -19,6 +19,7 @@ class Auth {
      */
     public function try_login($username, $password) {
         $ci =& get_instance();
+        $this->sessionObj = new SessionData();
         $password = hash_password($password);
         $query = "SELECT * FROM app_user WHERE username = ? AND password = ? LIMIT 1";
         $queryResult = $ci->db->query($query, array($username, $password));
@@ -63,12 +64,12 @@ class Auth {
         $allowPost = parse_boolean($action['allow_post']);
         $isAnonymous = parse_boolean($action['is_anonymous']);
 
-        if(!$allowPost && $_SERVER['REQUEST_METHOD'] === 'POST') {
+        /*if(!$allowPost && $_SERVER['REQUEST_METHOD'] === 'POST') {
             return $hasAccess;  //no access
         }
         elseif(!$allowGet && $_SERVER['REQUEST_METHOD'] === 'GET') {
             return $hasAccess;  //no access
-        }
+        }*/
 
         if($isAnonymous) {
             $hasAccess = TRUE;

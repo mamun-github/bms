@@ -10,17 +10,17 @@
     <meta content="" name="description" />
     <meta content="" name="author" />
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    <link href="assets/css/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/css/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/css/login/style-metro.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/css/login/style.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/css/login/style-responsive.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/css/login/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
-    <link href="assets/css/login/select/select_metro.css" rel="stylesheet" type="text/css" />
+    <link href="<?=assets_url()?>css/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="<?=assets_url()?>/css/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+    <link href="<?=assets_url()?>/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="<?=assets_url()?>/css/login/style-metro.css" rel="stylesheet" type="text/css"/>
+    <link href="<?=assets_url()?>/css/login/style.css" rel="stylesheet" type="text/css"/>
+    <link href="<?=assets_url()?>/css/login/style-responsive.css" rel="stylesheet" type="text/css"/>
+    <link href="<?=assets_url()?>/css/login/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+    <link href="<?=assets_url()?>/css/login/select/select_metro.css" rel="stylesheet" type="text/css" />
     <!-- END GLOBAL MANDATORY STYLES -->
     <!-- BEGIN PAGE LEVEL STYLES -->
-    <link href="assets/css/login/login-soft.css" rel="stylesheet" type="text/css"/>
+    <link href="<?=assets_url()?>/css/login/login-soft.css" rel="stylesheet" type="text/css"/>
     <!-- END PAGE LEVEL STYLES -->
     <link rel="shortcut icon" href="favicon.ico" />
 </head>
@@ -84,7 +84,7 @@
     </form>
     <!-- END LOGIN FORM -->
     <!-- BEGIN FORGOT PASSWORD FORM -->
-    <form class="form-vertical forget-form" action="index.html" method="post">
+    <form class="form-vertical forget-form" action="" method="post">
         <h3 >Forget Password ?</h3>
         <p>Enter your e-mail address below to reset your password.</p>
         <div class="control-group">
@@ -106,7 +106,7 @@
     </form>
     <!-- END FORGOT PASSWORD FORM -->
     <!-- BEGIN REGISTRATION FORM -->
-    <form class="form-vertical register-form" action="index.html" method="post">
+    <form class="form-vertical register-form" action="" method="post">
         <h3 >Sign Up</h3>
         <p>Enter your personal details below:</p>
         <div class="control-group">
@@ -201,27 +201,27 @@
 </div>
 <!-- END COPYRIGHT -->
 <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
-<!-- BEGIN CORE PLUGINS -->   <script src="assets/js/login/jquery-1.10.1.min.js" type="text/javascript"></script>
-<script src="assets/js/login/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<!-- BEGIN CORE PLUGINS -->   <script src="<?=assets_url()?>/js/login/jquery-1.10.1.min.js" type="text/javascript"></script>
+<script src="<?=assets_url()?>/js/login/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
 <!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
-<script src="assets/js/login/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
-<script src="assets/js/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="<?=assets_url()?>/js/login/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+<script src="<?=assets_url()?>/js/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <!--[if lt IE 9]>
-<script src="assets/js/login/excanvas.min.js"></script>
-<script src="assets/js/login/respond.min.js"></script>
+<script src="<?=assets_url()?>/js/login/excanvas.min.js"></script>
+<script src="<?=assets_url()?>/js/login/respond.min.js"></script>
 <![endif]-->
-<script src="assets/js/login/jquery.slimscroll.min.js" type="text/javascript"></script>
-<script src="assets/js/login/jquery.blockui.min.js" type="text/javascript"></script>
-<script src="assets/js/login/jquery.cookie.min.js" type="text/javascript"></script>
+<script src="<?=assets_url()?>/js/login/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="<?=assets_url()?>/js/login/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="<?=assets_url()?>/js/login/jquery.cookie.min.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 <!-- BEGIN PAGE LEVEL PLUGINS -->
-<script src="assets/js/login/jquery.validate.min.js" type="text/javascript"></script>
-<script src="assets/js/login/jquery.backstretch.min.js" type="text/javascript"></script>
-<script src="assets/js/login/select.min.js" type="text/javascript" ></script>
+<script src="<?=assets_url()?>/js/login/jquery.validate.min.js" type="text/javascript"></script>
+<script src="<?=assets_url()?>/js/login/jquery.backstretch.min.js" type="text/javascript"></script>
+<script src="<?=assets_url()?>/js/login/select.min.js" type="text/javascript" ></script>
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
-<script src="assets/js/login/app.js" type="text/javascript"></script>
-<script src="assets/js/login/login-soft.js" type="text/javascript"></script>
+<script src="<?=assets_url()?>/js/login/app.js" type="text/javascript"></script>
+<script src="<?=assets_url()?>/js/login/login-soft.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
     jQuery(document).ready(function() {

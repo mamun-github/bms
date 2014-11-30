@@ -16,10 +16,17 @@ $hook['post_controller'][0] = array(
     'function' => 'create_default_data',
     'filename' => 'BootstrapDefaultDataHooks.php',
     'filepath' => 'hooks'
+);
+
+$hook['post_controller'][1] = array(
+    'class'    => 'AuthenticationHooks',
+    'function' => 'authenticate',
+    'filename' => 'AuthenticationHooks.php',
+    'filepath' => 'hooks'
 );*/
 
 
-$hook['post_controller'][1] = array(
+$hook['post_controller_constructor'][] = array(
     'class'    => 'AuthenticationHooks',
     'function' => 'authenticate',
     'filename' => 'AuthenticationHooks.php',

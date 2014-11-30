@@ -7,6 +7,7 @@ class Login_check_login extends MY_Model {
     }
 
     private $USERNAME_PASSWORD_EMPTY = "Username or password cannot be empty";
+    private $USERNAME_PASSWORD_ERROR = "Invalid username or password";
     private $LOGIN_FAILED = "Failed to check login";
     private $USERNAME = "username";
     private $PASSWORD = "password";
@@ -17,8 +18,6 @@ class Login_check_login extends MY_Model {
         $error = $result[ERROR];
         if($error) return $result;
         $result = $this->main($result);
-
-
         return $result;
     }
 
@@ -45,7 +44,10 @@ class Login_check_login extends MY_Model {
             $username = $result[$this->USERNAME];
             $password = $result[$this->PASSWORD];
             $success = $this->auth->try_login($username, $password);
-
+            if(!$success) {
+                echo "set invalid message and reutn";
+                return $this->set_error($result, $this->USERNAME_PASSWORD_ERROR);
+            }
             return $result;
         } catch(Exception $ex) {
             log_error($ex);

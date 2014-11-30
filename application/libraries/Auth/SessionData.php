@@ -15,7 +15,7 @@ class SessionData {
     }
 
     public function get_user_id() {
-        $appUserId = $this->ci->session->userdata('app_user_d');
+        $appUserId = $this->ci->session->userdata('app_user_id');
         if(!$appUserId) {
             return 0;
         }
@@ -31,7 +31,7 @@ class SessionData {
     }
 
     public function add_app_user($appUser) {
-        $this->ci->session->set_userdata('app_user_d', $appUser[ID]);
+        $this->ci->session->set_userdata('app_user_id', $appUser[ID]);
         $this->ci->session->set_userdata('app_user', $appUser);
     }
 }
