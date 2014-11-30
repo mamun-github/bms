@@ -2,17 +2,16 @@
 
 
 //schema create hook
+//default data create hook
 
 /*$hook['pre_controller'][] = array(
     'class'    => 'BootstrapSchemaHooks',
     'function' => 'create_schema',
     'filename' => 'BootstrapSchemaHooks.php',
     'filepath' => 'hooks'
-);*/
+);
 
-//default data create hook
-
-/*$hook['post_controller'][0] = array(
+$hook['post_controller'][0] = array(
     'class'    => 'BootstrapDefaultDataHooks',
     'function' => 'create_default_data',
     'filename' => 'BootstrapDefaultDataHooks.php',

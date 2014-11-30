@@ -57,11 +57,11 @@
  */
 	if (defined('ENVIRONMENT') AND file_exists(APPPATH.'config/'.ENVIRONMENT.'/constants.php'))
 	{
-		require(APPPATH.'config/'.ENVIRONMENT.'/constants.php');
+		require(APPPATH . 'config/' . ENVIRONMENT . '/constants.php');
 	}
 	else
 	{
-		require(APPPATH.'config/constants.php');
+		require(APPPATH . 'config/constants.php');
 	}
 
 /*
