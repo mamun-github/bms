@@ -34,4 +34,8 @@ class SessionData {
         $this->ci->session->set_userdata('app_user_id', $appUser[ID]);
         $this->ci->session->set_userdata('app_user', $appUser);
     }
+
+    public function logout_user() {
+        $this->ci->session->sess_destroy();
+    }
 }

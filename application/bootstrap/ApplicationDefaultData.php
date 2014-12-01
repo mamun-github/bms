@@ -60,6 +60,9 @@ class ApplicationDefaultData {
         //id = 4
         $action = new Action(array('controller_name'=>'home', 'action_name'=>'demo', 'description'=>'Show demo page', 'allow_get'=>FALSE, 'allow_post'=>TRUE, 'is_anonymous'=>FALSE));
         $this->em->persist($action);
+        //id = 4
+        $action = new Action(array('controller_name'=>'login', 'action_name'=>'logout', 'description'=>'Logout user', 'allow_get'=>TRUE, 'allow_post'=>FALSE, 'is_anonymous'=>TRUE));
+        $this->em->persist($action);
     }
 
     private function createRoleAction() {

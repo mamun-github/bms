@@ -36,3 +36,22 @@ class MY_Model extends CI_Model {
         return $result;
     }
 }
+
+/**
+ * Interface Action_Model_Interface
+ * All action model should implement this interface
+ */
+interface Action_Model_Interface{
+
+    public function execute();
+
+    public  function pre($result);
+
+    public function main($result);
+
+    public function post($result);
+
+    public function success($result);
+
+    public function failure($result);
+}

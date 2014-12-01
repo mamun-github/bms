@@ -16,4 +16,14 @@ class Login extends MY_Controller {
             redirect('home');
         }
     }
+
+    public function logout() {
+        $this->auth->logout();
+        $url = base_url();
+        redirect($url);
+    }
+
+    public function lock_app() {
+
+    }
 }

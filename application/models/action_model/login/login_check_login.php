@@ -1,6 +1,6 @@
 <?php
 
-class Login_check_login extends MY_Model {
+class Login_check_login extends MY_Model implements Action_Model_Interface{
 
     public function __construct() {
         parent::__construct();
@@ -14,7 +14,8 @@ class Login_check_login extends MY_Model {
 
 
     public function execute() {
-        $result = $this->pre($this->result);
+        $result = $this->result;
+        $result = $this->pre($result);
         $error = $result[ERROR];
         if($error) return $result;
         $result = $this->main($result);
@@ -55,16 +56,9 @@ class Login_check_login extends MY_Model {
         }
     }
 
-    public function post($result) {
+    public function post($result) {}
 
-    }
+    public function success($result) {}
 
-    public function success($result) {
-
-    }
-
-    public function failure($result) {
-
-    }
-
+    public function failure($result) {}
 }

@@ -32,19 +32,24 @@ class Auth {
     }
 
     public function logout() {
-
+        $this->sessionObj = new SessionData();
+        $this->sessionObj->logout_user();
+        return TRUE;
     }
 
     public function is_logged_in() {
-
+        $this->sessionObj = new SessionData();
+        return $this->sessionObj->is_logged_in();
     }
 
     public function get_user_id() {
-
+        $this->sessionObj = new SessionData();
+        return $this->sessionObj->get_user_id();
     }
 
     public function get_user() {
-
+        $this->sessionObj = new SessionData();
+        return $this->sessionObj->get_user();
     }
 
 
