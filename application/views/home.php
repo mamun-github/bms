@@ -50,10 +50,12 @@
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                    <a href="login/lock_app" class="btn btn-default btn-flat">
+                                            <i class="fa fa-lock"></i> Lock</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="login/logout" class="btn btn-default btn-flat">Sign out</a>
+                                    <a href="login/logout" class="btn btn-default btn-flat">
+                                        <i class="fa fa-sign-out"></i> Sign out</a>
                                 </div>
                             </li>
                         </ul>

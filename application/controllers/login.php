@@ -24,6 +24,7 @@ class Login extends MY_Controller {
     }
 
     public function lock_app() {
-
+        $this->auth->lock_application();
+        $this->load_view('lock_app');
     }
 }

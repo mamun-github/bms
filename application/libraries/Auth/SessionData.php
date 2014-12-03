@@ -38,4 +38,17 @@ class SessionData {
     public function logout_user() {
         $this->ci->session->sess_destroy();
     }
+
+    public function is_locked_app() {
+        $isLocked = $this->ci->session->userdata('is_locked_app');
+        return $isLocked;
+    }
+
+    public function lock_application() {
+        $this->ci->session->set_userdata('is_locked_app', TRUE);
+    }
+
+    public function unlock_application() {
+        $this->ci->session->unset_userdata('is_locked_app');
+    }
 }

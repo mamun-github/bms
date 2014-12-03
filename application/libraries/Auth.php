@@ -52,6 +52,15 @@ class Auth {
         return $this->sessionObj->get_user();
     }
 
+    public function lock_application() {
+        $this->sessionObj = new SessionData();
+        $this->sessionObj->lock_application();
+    }
+
+    public function unlock_application() {
+
+    }
+
 
     public function check_access($controller, $action) {
         $this->sessionObj = new SessionData();
