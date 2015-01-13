@@ -1,11 +1,11 @@
 <ul class="sidebar-menu" id="sidebar-menu">
     <li>
-        <a href="#home/demo" class="ajax-link">
+        <a href="home/dashboard" class="ajax-link">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
         </a>
     </li>
     <li>
-        <a href="#home/demo2" class="ajax-link">
+        <a href="#" class="ajax-link">
             <i class="fa fa-th"></i> <span>Widgets</span>
         </a>
     </li>

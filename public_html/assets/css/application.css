@@ -12,62 +12,62 @@
 
 .dot-loader-1 {
     background-color: #ffffff;
-    -webkit-animation: move 4s infinite cubic-bezier(.2,.64,.81,.23);
-    -moz-animation: move 4s infinite cubic-bezier(.2,.64,.81,.23);
-    -ms-animation: move 4s infinite cubic-bezier(.2,.64,.81,.23);
-    -o-animation: move 4s infinite cubic-bezier(.2,.64,.81,.23);
-    animation: move 4s infinite cubic-bezier(.2,.64,.81,.23);
+    -webkit-animation: move 3s infinite cubic-bezier(.2,.64,.81,.23);
+    -moz-animation: move 3s infinite cubic-bezier(.2,.64,.81,.23);
+    -ms-animation: move 3s infinite cubic-bezier(.2,.64,.81,.23);
+    -o-animation: move 3s infinite cubic-bezier(.2,.64,.81,.23);
+    animation: move 3s infinite cubic-bezier(.2,.64,.81,.23);
 }
 .dot-loader-2 {
     background-color: #ffffff;
-    -webkit-animation: move 4s 150ms infinite cubic-bezier(.2,.64,.81,.23);
-    -moz-animation: move 4s 150ms infinite cubic-bezier(.2,.64,.81,.23);
-    -ms-animation: move 4s 150ms infinite cubic-bezier(.2,.64,.81,.23);
-    -o-animation: move 4s 150ms infinite cubic-bezier(.2,.64,.81,.23);
-    animation: move 4s 150ms infinite cubic-bezier(.2,.64,.81,.23);
+    -webkit-animation: move 3s 150ms infinite cubic-bezier(.2,.64,.81,.23);
+    -moz-animation: move 3s 150ms infinite cubic-bezier(.2,.64,.81,.23);
+    -ms-animation: move 3s 150ms infinite cubic-bezier(.2,.64,.81,.23);
+    -o-animation: move 3s 150ms infinite cubic-bezier(.2,.64,.81,.23);
+    animation: move 3s 150ms infinite cubic-bezier(.2,.64,.81,.23);
 }
 .dot-loader-3 {
     background-color: #ffffff;
-    -webkit-animation: move 4s 300ms infinite cubic-bezier(.2,.64,.81,.23);
-    -moz-animation: move 4s 300ms infinite cubic-bezier(.2,.64,.81,.23);
-    -ms-animation: move 4s 300ms infinite cubic-bezier(.2,.64,.81,.23);
-    -o-animation: move 4s 300ms infinite cubic-bezier(.2,.64,.81,.23);
-    animation: move 4s 300ms infinite cubic-bezier(.2,.64,.81,.23);
+    -webkit-animation: move 3s 300ms infinite cubic-bezier(.2,.64,.81,.23);
+    -moz-animation: move 3s 300ms infinite cubic-bezier(.2,.64,.81,.23);
+    -ms-animation: move 3s 300ms infinite cubic-bezier(.2,.64,.81,.23);
+    -o-animation: move 3s 300ms infinite cubic-bezier(.2,.64,.81,.23);
+    animation: move 3s 300ms infinite cubic-bezier(.2,.64,.81,.23);
 }
 .dot-loader-4 {
     background-color: #ffffff;
-    -webkit-animation: move 4s 450ms infinite cubic-bezier(.2,.64,.81,.23);
-    -moz-animation: move 4s 450ms infinite cubic-bezier(.2,.64,.81,.23);
-    -ms-animation: move 4s 450ms infinite cubic-bezier(.2,.64,.81,.23);
-    -o-animation: move 4s 450ms infinite cubic-bezier(.2,.64,.81,.23);
-    animation: move 4s 450ms infinite cubic-bezier(.2,.64,.81,.23);
+    -webkit-animation: move 3s 450ms infinite cubic-bezier(.2,.64,.81,.23);
+    -moz-animation: move 3s 450ms infinite cubic-bezier(.2,.64,.81,.23);
+    -ms-animation: move 3s 450ms infinite cubic-bezier(.2,.64,.81,.23);
+    -o-animation: move 3s 450ms infinite cubic-bezier(.2,.64,.81,.23);
+    animation: move 3s 450ms infinite cubic-bezier(.2,.64,.81,.23);
 }
 
 .dot-loader-5 {
     background-color: #ffffff;
-    -webkit-animation: move 4s 600ms infinite cubic-bezier(.2,.64,.81,.23);
-    -moz-animation: move 4s 600ms infinite cubic-bezier(.2,.64,.81,.23);
-    -ms-animation: move 4s 600ms infinite cubic-bezier(.2,.64,.81,.23);
-    -o-animation: move 4s 600ms infinite cubic-bezier(.2,.64,.81,.23);
-    animation: move 4s 600ms infinite cubic-bezier(.2,.64,.81,.23);
+    -webkit-animation: move 3s 600ms infinite cubic-bezier(.2,.64,.81,.23);
+    -moz-animation: move 3s 600ms infinite cubic-bezier(.2,.64,.81,.23);
+    -ms-animation: move 3s 600ms infinite cubic-bezier(.2,.64,.81,.23);
+    -o-animation: move 3s 600ms infinite cubic-bezier(.2,.64,.81,.23);
+    animation: move 3s 600ms infinite cubic-bezier(.2,.64,.81,.23);
 }
 
 .dot-loader-6 {
     background-color: #ffffff;
-    -webkit-animation: move 4s 750ms infinite cubic-bezier(.2,.64,.81,.23);
-    -moz-animation: move 4s 750ms infinite cubic-bezier(.2,.64,.81,.23);
-    -ms-animation: move 4s 750ms infinite cubic-bezier(.2,.64,.81,.23);
-    -o-animation: move 4s 750ms infinite cubic-bezier(.2,.64,.81,.23);
-    animation: move 4s 750ms infinite cubic-bezier(.2,.64,.81,.23);
+    -webkit-animation: move 3s 750ms infinite cubic-bezier(.2,.64,.81,.23);
+    -moz-animation: move 3s 750ms infinite cubic-bezier(.2,.64,.81,.23);
+    -ms-animation: move 3s 750ms infinite cubic-bezier(.2,.64,.81,.23);
+    -o-animation: move 3s 750ms infinite cubic-bezier(.2,.64,.81,.23);
+    animation: move 3s 750ms infinite cubic-bezier(.2,.64,.81,.23);
 }
 
 .dot-loader-7 {
     background-color: #ffffff;
-    -webkit-animation: move 4s 900ms infinite cubic-bezier(.2,.64,.81,.23);
-    -moz-animation: move 4s 900ms infinite cubic-bezier(.2,.64,.81,.23);
-    -ms-animation: move 4s 900ms infinite cubic-bezier(.2,.64,.81,.23);
-    -o-animation: move 4s 900ms infinite cubic-bezier(.2,.64,.81,.23);
-    animation: move 4s 900ms infinite cubic-bezier(.2,.64,.81,.23);
+    -webkit-animation: move 3s 900ms infinite cubic-bezier(.2,.64,.81,.23);
+    -moz-animation: move 3s 900ms infinite cubic-bezier(.2,.64,.81,.23);
+    -ms-animation: move 3s 900ms infinite cubic-bezier(.2,.64,.81,.23);
+    -o-animation: move 3s 900ms infinite cubic-bezier(.2,.64,.81,.23);
+    animation: move 3s 900ms infinite cubic-bezier(.2,.64,.81,.23);
 }
 
 @-webkit-keyframes move{

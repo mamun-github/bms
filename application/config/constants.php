@@ -42,7 +42,7 @@ define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
  * this is default php path for windows
  * configure if php executable located in another folder or application running on another environment (i.e. linux, mac)
  */
-define('PHP_PATH','c:\xampp\php\php.exe');
+define('PHP_PATH','K:\Projects\xampp\php\php.exe');
 
 
 /**

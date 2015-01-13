@@ -55,25 +55,20 @@ class ApplicationDefaultData {
         $action = new Action(array('controller_name'=>'login', 'action_name'=>'check_login', 'description'=>'Check user login', 'allow_get'=>FALSE, 'allow_post'=>TRUE, 'is_anonymous'=>TRUE));
         $this->em->persist($action);
         //id = 3
-        $action = new Action(array('controller_name'=>'home', 'action_name'=>'index', 'description'=>'Show home page', 'allow_get'=>TRUE, 'allow_post'=>FALSE, 'is_anonymous'=>FALSE));
-        $this->em->persist($action);
-        //id = 4
-        $action = new Action(array('controller_name'=>'home', 'action_name'=>'demo', 'description'=>'Show demo page', 'allow_get'=>FALSE, 'allow_post'=>TRUE, 'is_anonymous'=>FALSE));
-        $this->em->persist($action);
-        //id = 5
         $action = new Action(array('controller_name'=>'login', 'action_name'=>'logout', 'description'=>'Logout user', 'allow_get'=>TRUE, 'allow_post'=>FALSE, 'is_anonymous'=>TRUE));
         $this->em->persist($action);
-        //id = 6
+        //id = 4
         $action = new Action(array('controller_name'=>'login', 'action_name'=>'lock_app', 'description'=>'Lock application', 'allow_get'=>TRUE, 'allow_post'=>FALSE, 'is_anonymous'=>TRUE));
+        $this->em->persist($action);
+        //id = 5
+        $action = new Action(array('controller_name'=>'home', 'action_name'=>'dashboard', 'description'=>'Show dashboard page', 'allow_get'=>FALSE, 'allow_post'=>TRUE, 'is_anonymous'=>FALSE));
         $this->em->persist($action);
     }
 
     private function createRoleAction() {
-        $roleAction = new RoleAction(array('action_id'=>3, 'role_id'=>Role::$ROLE_ADMIN, 'is_reserved'=>TRUE));
+        $roleAction = new RoleAction(array('action_id'=>5, 'role_id'=>Role::$ROLE_ADMIN, 'is_reserved'=>TRUE));
         $this->em->persist($roleAction);
-        $roleAction = new RoleAction(array('action_id'=>3, 'role_id'=>Role::$ROLE_DEVELOPMENT, 'is_reserved'=>TRUE));
-        $this->em->persist($roleAction);
-        $roleAction = new RoleAction(array('action_id'=>4, 'role_id'=>Role::$ROLE_ADMIN, 'is_reserved'=>TRUE));
+        $roleAction = new RoleAction(array('action_id'=>5, 'role_id'=>Role::$ROLE_DEVELOPMENT, 'is_reserved'=>TRUE));
         $this->em->persist($roleAction);
     }
 }
