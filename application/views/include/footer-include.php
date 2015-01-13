@@ -20,6 +20,9 @@
 <!-- iCheck -->
 <script src="<?=assets_url()?>js/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
 
+<!--history-->
+<script src="<?=assets_url()?>js/plugins/history/jquery.history.js" type="text/javascript"></script>
+
 <!-- Theme -->
 <script src="<?=assets_url()?>js/theme.js" type="text/javascript"></script>
 

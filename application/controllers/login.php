@@ -3,7 +3,11 @@
 class Login extends MY_Controller {
 
     public function index() {
-        $this->load_view('login');
+        if($this->auth->is_logged_in()) {
+            $this->load_view('home');
+        } else {
+            $this->load_view('login');
+        }
     }
 
     public function check_login() {
@@ -13,7 +17,7 @@ class Login extends MY_Controller {
             //show login page again with some data
             die('login failed');
         } else {
-            redirect('home');
+            redirect(base_url());
         }
     }
 

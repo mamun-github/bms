@@ -13,7 +13,7 @@
     <body class="skin-blue">
         <!-- header logo: style can be found in header.less -->
         <header class="header">
-            <a href="<?=base_url('home');?>" class="logo">Business Management</a>
+            <a href="<?=base_url();?>" class="logo">Business Management</a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">
                 <!-- Sidebar toggle button-->
@@ -110,7 +110,6 @@
 
         <!-- Main content -->
         <section class="content" id="content-holder">
-            This is main content box
         </section>
         <!-- /.content -->
 

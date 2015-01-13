@@ -26,22 +26,31 @@ $(document).ready(function() {
         }
         var url = element.attr('href');
         if(url == '#') return false;
-        show_spinner();
-        $.ajax({
-            type: 'post',
-            url: url,
-            success: function(data) {
-                $('#content-holder').html(data);
-            },
-            error: function() {
-            },
-            complete: function() {
-                hide_spinner();
-                element.closest('li').addClass('active');
-            }
-        });
+        url = url.substr(1, url.length - 1);
+        loadUrl(url, element);
     });
 });
+
+function loadUrl(url, leftMenuElement){
+    show_spinner();
+    $.ajax({
+        type: 'post',
+        url: url,
+        success: function(data) {
+            $('#content-holder').html(data);
+            History.pushState({state: 1, rand: Math.random()}, "State 1", "?" + url);
+        },
+        error: function() {
+        },
+        complete: function() {
+            hide_spinner();
+            if(leftMenuElement) {
+                $(".ajax-link").closest('li').removeClass('active');
+                leftMenuElement.closest('li').addClass('active');
+            }
+        }
+    });
+}
 
 function initializeForm() {
     $("input[type='checkbox']:not(.simple), input[type='radio']:not(.simple)").iCheck({
@@ -49,3 +58,16 @@ function initializeForm() {
         radioClass: 'iradio_minimal'
     });
 }
+
+(function (window) {
+    // Establish Variables
+    var state = History.getState();
+    //History.log('initial:', state.data, state.title, state.url);
+
+    // Bind to State Change
+    History.Adapter.bind(window, 'statechange', function () {
+        var state = History.getState();
+        History.pushState({state: 1, rand: Math.random()}, "State 1", "?state=1");
+    });
+
+})(window);
