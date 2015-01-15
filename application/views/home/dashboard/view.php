@@ -1,4 +1,4 @@
-<?php $this->load->view('dashboard/script')?>
+<?php $this->load->view('home/dashboard/script')?>
 
 <div>
     dashboard view will be loaded here

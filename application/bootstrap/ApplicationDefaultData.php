@@ -63,12 +63,20 @@ class ApplicationDefaultData {
         //id = 5
         $action = new Action(array('controller_name'=>'home', 'action_name'=>'dashboard', 'description'=>'Show dashboard page', 'allow_get'=>FALSE, 'allow_post'=>TRUE, 'is_anonymous'=>FALSE));
         $this->em->persist($action);
+        //id = 6
+        $action = new Action(array('controller_name'=>'home', 'action_name'=>'favorite', 'description'=>'Show favorite options on home', 'allow_get'=>FALSE, 'allow_post'=>TRUE, 'is_anonymous'=>FALSE));
+        $this->em->persist($action);
     }
 
     private function createRoleAction() {
         $roleAction = new RoleAction(array('action_id'=>5, 'role_id'=>Role::$ROLE_ADMIN, 'is_reserved'=>TRUE));
         $this->em->persist($roleAction);
         $roleAction = new RoleAction(array('action_id'=>5, 'role_id'=>Role::$ROLE_DEVELOPMENT, 'is_reserved'=>TRUE));
+        $this->em->persist($roleAction);
+
+        $roleAction = new RoleAction(array('action_id'=>6, 'role_id'=>Role::$ROLE_ADMIN, 'is_reserved'=>TRUE));
+        $this->em->persist($roleAction);
+        $roleAction = new RoleAction(array('action_id'=>6, 'role_id'=>Role::$ROLE_DEVELOPMENT, 'is_reserved'=>TRUE));
         $this->em->persist($roleAction);
     }
 }

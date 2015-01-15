@@ -2,6 +2,7 @@
  * load content when left menu is clicked
  */
 $(document).ready(function() {
+    checkAndLoadFavOrUrl();
     $("#sidebar-menu a").click(function(event) {
         if(event.preventDefault) event.preventDefault();
         else event.returnValue = false;
@@ -64,6 +65,17 @@ function loadUrl(url){
     });
 }
 
+function checkAndLoadFavOrUrl() {
+    var state = History.getState();
+    var fullUrl = state.url;
+    if(fullUrl.indexOf("?") == -1) {
+        url = "home/favorite";
+    }
+    else {
+        var url = fullUrl.substr((fullUrl.indexOf("?") + 1), fullUrl.length);
+    }
+    loadUrl(url);
+}
 
 (function (window) {
     // Establish Variables
@@ -73,7 +85,12 @@ function loadUrl(url){
     History.Adapter.bind(window, 'statechange', function () {
         var state = History.getState();
         var fullUrl = state.url;
-        var url = fullUrl.substr((fullUrl.indexOf("?") + 1), fullUrl.length);
+        if(fullUrl.indexOf("?") == -1) {
+            url = "home/favorite";
+        }
+        else {
+            var url = fullUrl.substr((fullUrl.indexOf("?") + 1), fullUrl.length);
+        }
         loadUrl(url);
     });
 
