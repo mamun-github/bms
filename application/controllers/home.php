@@ -2,6 +2,10 @@
 
 class Home extends MY_Controller {
 
+    function __construct() {
+        parent::__construct();
+    }
+
     public function favorite() {
         sleep(3);
         $this->load_view("home/favorite/view");

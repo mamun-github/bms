@@ -2,6 +2,10 @@
 
 class Login extends MY_Controller {
 
+    function __construct() {
+        parent::__construct();
+    }
+
     public function index() {
         if($this->auth->is_logged_in()) {
             $this->load_view('home');
