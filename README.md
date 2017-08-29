@@ -1,4 +1,4 @@
 BMS
 ===
 
-Business management system
+Business management system (Abandoned)
